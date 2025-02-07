@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from qutip import *
+# Generate a random quantum state vector
+num_qubits = 1  # Number of qubits
+state = rand_ket(2 ** num_qubits)
+
+# Visualize the state using a 3D plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+sphere = Bloch(axes=ax)
+sphere.add_states(state)
+sphere.show()
